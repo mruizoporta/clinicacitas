@@ -47,22 +47,7 @@
             </div>
           </div>
           <!-- Navbar items -->
-          <ul class="navbar-nav ml-auto">
-            
-            <li class="nav-item">
-              <a class="nav-link nav-link-icon" href="{{('register')}}">
-                <i class="ni ni-circle-08"></i>
-                <span class="nav-link-inner--text">Registrate</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link nav-link-icon" href="{{('login')}}">
-                <i class="ni ni-key-25"></i>
-                <span class="nav-link-inner--text">Iniciar sesión prueba</span>
-              </a>
-            </li>
-            
-          </ul>
+        
         </div>
       </div>
     </nav>
@@ -96,9 +81,9 @@
           <div class="col-xl-6">
             <ul class="nav nav-footer justify-content-center justify-content-xl-end">
              
-              <li class="nav-item">
+             <!--  <li class="nav-item">
                 <a href="" class="nav-link text-muted" target="_blank">¿Quienes somos?</a>
-              </li>
+              </li> -->
              
             </ul>
           </div>

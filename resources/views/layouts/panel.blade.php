@@ -8,7 +8,7 @@
    {{config('app.name')}}
   </title>
   <!-- Favicon -->
-  <link href="{{asset('img/brand/favicon.png')}}" rel="icon" type="image/png">
+  <link href="{{asset('img/brand/favicon-color.png')}}" rel="icon" type="image/png">
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
   <!-- Icons -->
@@ -16,6 +16,7 @@
   <link href="{{asset('js/plugins/@fortawesome/fontawesome-free/css/all.min.css')}}" rel="stylesheet" />
   <!-- CSS Files -->
   <link href="{{asset('css/argon-dashboard.css?v=1.1.2')}}" rel="stylesheet" />
+  @yield('styles')
 </head>
 
 <body class="">
@@ -26,8 +27,9 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <!-- Brand -->
+      <img src="{{asset('img/brand/blue.png')}}" class="navbar-brand-img" alt="...">
       <a class="navbar-brand pt-0" href="./index.html">
-        <img src="{{asset('img/brand/blue.png')}}" class="navbar-brand-img" alt="...">
+       
       </a>
       <!-- User -->
       <ul class="nav align-items-center d-md-none">
@@ -78,20 +80,17 @@
       </div>
     </div>
   </nav>
+  
   <div class="main-content">
     <!-- Navbar -->
     <nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
       <div class="container-fluid">
         <!-- Brand -->
-        <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="./index.html">Dashboard</a>
-        <!-- Form -->
+         <!-- Form -->
         <form class="navbar-search navbar-search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto">
           <div class="form-group mb-0">
             <div class="input-group input-group-alternative">
-              <div class="input-group-prepend">
-                <span class="input-group-text"><i class="fas fa-search"></i></span>
-              </div>
-              <input class="form-control" placeholder="Search" type="text">
+              
             </div>
           </div>
         </form>
@@ -130,6 +129,9 @@
   <!--   Optional JS   -->
   <script src="{{asset('js/plugins/chart.js/dist/Chart.min.js')}}"></script>
   <script src="{{asset('js/plugins/chart.js/dist/Chart.extension.js')}}"></script>
+
+  @yield('scripts')
+  
   <!--   Argon JS   -->
   <script src="{{asset('js/argon-dashboard.min.js?v=1.1.2')}}"></script>
   <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>

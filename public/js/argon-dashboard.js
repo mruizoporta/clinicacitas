@@ -135,7 +135,7 @@ var $map = $('#map-canvas'),
   map,
   lat,
   lng,
-  color = "#2D3856";
+  color = "#383C57";
 
 function initMap() {
 
@@ -583,7 +583,7 @@ var Charts = (function() {
     },
     theme: {
       'default': '#172b4d',
-      'primary': '#2D3856',
+      'primary': '#383C57',
       'secondary': '#f4f5f7',
       'info': '#11cdef',
       'success': '#2dce89',

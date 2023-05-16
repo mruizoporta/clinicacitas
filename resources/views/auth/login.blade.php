@@ -22,7 +22,7 @@
                 </div>
              @else
                 <div class="text-center text-muted mb-4">
-                    <small>Ingresa tus credenciales para ingresar al sistema</small>
+                    <h3>Ingresa tus credenciales</h3>
                 </div>
             @endif
               <form role="form" method="POST" action="{{ route('login') }}">
@@ -32,7 +32,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                     </div>
-                    <input class="form-control" placeholder="Correo Electrónico" type="email" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                    <input class="form-control " placeholder="Correo Electrónico" type="email" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                   </div>
                 </div>
                 <div class="form-group">
@@ -40,7 +40,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                     </div>
-                    <input class="form-control" placeholder="Contraseñas" type="password" name="password" required autocomplete="current-password">
+                    <input class="form-control " placeholder="Contraseñas" type="password" name="password" required autocomplete="current-password">
                   </div>
                 </div>
                 <div class="custom-control custom-control-alternative custom-checkbox">
@@ -50,18 +50,14 @@
                   </label>
                 </div>
                 <div class="text-center">
-                  <button type="submit" class="btn btn-primary my-4">Empezar</button>
+                  <button type="submit" class="btn btn-primary my-4 ">Empezar</button>
                 </div>
               </form>
             </div>
           </div>
           <div class="row mt-3">
-            <div class="col-6">
-              <a href="{{ route('password.request') }}" class="text-light"><small>¿Olvidaste tu contraseña?</small></a>
-            </div>
-            <div class="col-6 text-right">
-              <a href="{{ route('register')}}" class="text-light"><small>Crear cuenta nueva</small></a>
-            </div>
+            
+          
           </div>
         </div>
       </div>

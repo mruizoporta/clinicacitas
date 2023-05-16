@@ -1,0 +1,374 @@
+.mda-process {
+  border-radius: 0rem;
+  border: none;
+}
+
+.mda-process span.mda-edit {
+  color:#3586FF;
+}
+
+.mda-process > .card-header {
+  border-radius: 0rem;
+  border-bottom: none;
+}
+
+.mda-process > .card-header > button {
+  text-align: left !important;
+}
+
+.mda-process button > h2 {
+  margin-bottom: 0px;
+  color: #DA8C77;
+  font-size: 1.15rem;
+  font-weight: bold;
+}
+
+.mda-process button.collapsed > h2 {
+  color: #B2B9CC;
+}
+
+.mda-process .card-body > .mda-process-info {
+  border: 1px solid #B2B9CC;
+  border-radius: 3px;
+}
+
+.mda-process-info > h3:first-child {
+  font-size: 1rem;
+  color: #DA8C77;
+  font-weight: bold;
+}
+
+.mda-process-info > h3:last-child {
+  font-size: 1rem;
+  color: #383C57;
+
+}
+
+/*//--------------//*/
+
+#servicio h3, #medicos h3,
+#fecha h3, #paciente h3 {
+  font-size: x-large;
+  font-weight: bold;
+  margin-bottom: 1.125rem;
+  color:#383C57;
+}
+
+/*//--------------//*/
+
+.activees {
+  background-color: #fff;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.18), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.cardes {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15), 0 2px 5px rgba(0, 0, 0, 0.2);
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.cardhoras {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15), 0 2px 5px rgba(0, 0, 0, 0.2);
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.activemedicos {
+  border-color: #DA8C77 !important;
+  background-color: #fff;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.18), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.cardmedicos {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15), 0 2px 5px rgba(0, 0, 0, 0.2);
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+/*//--- Style BTN Hours ---//*/
+
+.btn-mda{
+  color: #DA8C77;
+  background-color: #fff;
+  border: 1px solid #DA8C77;
+  border-radius: 3px;
+  box-shadow: none;
+} 
+
+.activehoras {
+  color: #fff !important;
+  background-color: #DA8C77 !important;
+  border: 1px solid #DA8C77 !important;
+  border-radius: 3px;
+}
+
+.btn-mda.active, .btn-mda:hover,.btn-mda:focus {
+  color: #fff !important;
+  background-color: #DA8C77 !important;
+  border: 1px solid #DA8C77 !important;
+  border-radius: 3px;
+}  
+
+/*//--- Calendar ---//*/
+
+.mda-calendar {
+  border: 1px solid #B2B9CC !important;
+}
+
+.mda-calendar .fc-header-title h2 {
+  font-size: 32px;
+  color: #DA8C77;
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.mda-calendar .fc-header .fc-button {
+  padding: 0.5em 0.6em;
+  height: auto;
+  line-height: .6em;
+}
+
+.mda-calendar .fc-state-default {
+  border-color: #DA8C77;
+  color: #fff;
+  background-color: #DA8C77;
+}
+
+.mda-calendar .fc-state-hover {
+  border-color: #DA8066;
+  color: #fff;
+  background-color: #DA8066;
+}
+
+.mda-calendar .fc-text-arrow {
+  margin: 0em;
+  font-size: 3em;
+  line-height: 18px;
+}
+
+.mda-calendar thead tr.fc-first {
+  background-color: #fff;
+}
+
+.mda-calendar .fc-day-header {
+  color: #383C57;
+  font-size: 18px !important;
+  font-weight: bold !important;
+  font-family: 'Open Sans', sans-serif;
+  padding: .5em 0em !important;
+}
+
+.mda-calendar .fc-state-highlight > div > div.fc-day-number {
+  background-color: #DA8C77 !important;
+  border-radius: 6px !important;
+  color: white;
+}
+
+.mda-calendar .fc-cell-overlay {
+  background-color: #DA8C77 !important;
+  color: #383C57 !important;
+  
+}
+.mda-calendar .fc-week .fc-day:hover .fc-day-number {
+  background-color: transparent !important;
+  color: initial !important;
+}
+
+/*//--- Cita ---//*/
+
+.mda-card {
+  flex-flow: column wrap;
+}
+
+.card-deck .card-title,
+.card-deck label {
+  margin-bottom: 0rem !important;
+}
+
+.card-deck .card-text {
+  margin-top:15px;
+}
+
+.mda-card .card-text > a {
+  color: #3586FF;
+}
+
+.mda-process h2 > span,
+.mda-process-info h3:last-child > span,
+.mda-card .card-text > span,
+.mda-card .card-text > a {
+  font-weight: bold;
+}
+
+.cardes {
+  border: 1px solid transparent;
+  border-radius: 3px;
+}
+
+.activees {
+ border: 1px solid #DA8C77;
+}
+
+input[type="radio"] {
+  position: absolute;
+  right: 0px;
+  /*top:32px;*/
+  margin-right: 25px;
+  appearance: none;
+  background-color: #fff;
+  font-size: medium;
+  width: 1.15em;
+  height: 1.15em;
+  border: 1px solid #ccc;
+  border-radius: 15%;
+}
+
+input[type="radio"]:checked {
+  border: 1px solid #DA8C77;
+  border-radius: 15%;
+  background-color: #DA8C77;
+}
+
+input[type="radio"]:checked::before {
+  font: normal normal normal 18px/0.25 NucleoIcons;
+  content:"\ea26";
+  color: #fff;
+}
+
+.card-title label {
+  font-size: large;
+  font-weight: bold;
+  color: #DA8C77;
+}
+
+.mda-form .form-control {
+  font-size: 1rem !important;
+  font-family: 'Open Sans', sans-serif !important;
+}
+
+
+.mda-form .input-group-text:focus,
+.mda-form .form-control:focus {
+  color: #383C57;
+  background-color: #fff;
+  border-color: #da8c77;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(218, 140, 119,.25);
+}
+
+.mda-form .input-group-text {
+  width: 70px;
+}
+
+.mda-form .input-group-prepend {
+  margin-right: 0px;
+}
+
+.mda-form .input-group .form-control {
+  padding-left: 12px !important;
+}
+
+/*//----- Footer -----//*/
+
+.mda-btn button.btn {
+  width: 193px;
+}
+
+/*//----- Responsive Mobile -----//*/
+
+@media (max-width: 425px) {
+  .mda-px-0 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .mda-px-0 .mda-process > .card-header,
+  .mda-px-0 .mda-process .card-body {
+    padding-left: .5rem;
+    padding-right: .5rem;  
+  }
+
+  #servicio h3, #medicos h3,
+  #fecha h3, #paciente h3 {
+    font-size: 1.4rem;
+    padding-left:0.75rem;
+    padding-right:0.75rem;
+  }
+
+  .mda-px-0 .form-row >.col,
+  .mda-px-0 .form-row >[class*="col-"] {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .mda-calendar {
+    margin-left: .75rem;
+    margin-right: .75rem;
+  }
+
+  .mda-calendar .fc-header-title h2 {
+    font-size: 24px;
+    margin-top: 5px;
+    margin-bottom: 0px;
+  }
+
+  .mda-calendar .fc-text-arrow {
+    font-size: 2em;
+    line-height: 12px;
+  }
+
+  .mda-calendar .fc-day-header {
+    font-size: 14px !important;
+  }
+
+  .mda-horas {
+    margin-left: 0.75rem;
+    margin-right: 0.75rem;
+  }
+
+  .mda-horas > .btn-mda {
+    margin-bottom: 0.5rem;
+  }
+
+  .mda-px-0 #horasmanana > h4 {
+    margin-left: 0.75rem;
+    margin-right: 0.75rem;
+  }
+
+  .mda-form {
+    margin-left: 0.75rem;
+    margin-right: 0.75rem;
+  }
+
+  .mda-form h3 {
+    padding-left: 0rem !important;
+    padding-right: 0rem !important;
+  }
+
+  .mda-form button[type="submit"] {
+    width: 100%;
+    padding: 0.5rem;
+    text-align: center !important;
+  }
+
+  .mda-px-0 .mda-btn button {
+    width: 100%;
+    padding: .5rem;
+    text-align: center !important;
+  }
+
+  .mda-px-0 .mda-btn {
+    margin-bottom: 1rem;
+  }
+
+}
