@@ -64,12 +64,11 @@ use Illuminate\Support\Str;
                                 </div>
                                 <input class="form-control datepicker"
                                 id="date" name="scheduled_date"
-                                placeholder="Seleccionar Fecha" 
-                               
+                                placeholder="Seleccionar Fecha"                                
                                 value="{{old('scheduled_date'), date('Y-m-d')}}" 
                                 data-date-format="yyyy-mm-dd"
                                 data-date-start-date="{{date('Y-m-d')}}" 
-                                data-date-end-date="+30d">
+                                >
                             </div>
                         </div>
                     </div>

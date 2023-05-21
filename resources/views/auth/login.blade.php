@@ -1,5 +1,5 @@
 @extends('layouts.form')
-@section('title','Iniciar sesión')
+<!-- @section('title','Iniciar sesión') -->
 
 @section('content')
 
@@ -50,7 +50,7 @@
                   </label>
                 </div>
                 <div class="text-center">
-                  <button type="submit" class="btn btn-primary my-4 ">Empezar</button>
+                  <button type="submit" class="btn btn-primary my-4 " style="width:193px; heigth:40px">Empezar</button>
                 </div>
               </form>
             </div>

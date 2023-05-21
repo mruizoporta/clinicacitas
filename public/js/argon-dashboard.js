@@ -577,12 +577,12 @@ var Charts = (function() {
       400: '#ced4da',
       500: '#adb5bd',
       600: '#8898aa',
-      700: '#525f7f',
-      800: '#32325d',
+      700: '#383C57',
+      800: '#383C57',
       900: '#212529'
     },
     theme: {
-      'default': '#172b4d',
+      'default': '#383C57',
       'primary': '#383C57',
       'secondary': '#f4f5f7',
       'info': '#11cdef',

@@ -16,7 +16,7 @@ const noHours = `
 No hay horas disponibles.
 </h5>`
 
-  $(function(){
+  $(function(){ 
 
     $specialty=$('#specialty');
     $doctor=$('#doctor');
@@ -35,9 +35,10 @@ No hay horas disponibles.
     });
 
     //$doctor.change(loadHours);
-    //$date.change(loadHours);
+    $date.change(loadHours);
   });
   $(document).ready(function () {  
+   
 
   $("#btnserviciosiguiente").click(function()
       {       
@@ -58,14 +59,23 @@ No hay horas disponibles.
       });
       
 
+  var checkbox = document.querySelector("input[name=registrarse]");
+      checkbox.addEventListener( 'change', function() {
+      if(this.checked) {
+        $("#contrasenas").css("display", "block"); 
+      } else {
+        $("#contrasenas").css("display", "none"); 
+      }
+  });
+
   function onDoctorsLoad(doctors){
     let htmlOptions = '';
     doctors.forEach(doctor=>{     
 
-      htmlOptions += `<div class="col-12"><div id="${doctor.id}-cardmedicos" class="cardmedicos mb-4"  onclick="darclick(this)">
-      <div class="card-body" role="button"><h5 class="card-title"><input name="seleccionmedico" 
+      htmlOptions += `<div class="col-12"><div  id="${doctor.id}-cardmedicos" class="cardmedicos mb-4"  onclick="darclick(this)">
+      <div class="card-body" role="button"><h5 class="card-title" style="margin-bottom: 0rem !important; "><input name="seleccionmedico" 
       id="${doctor.id}" type="radio"><label id="nombre-${doctor.id}"  for="${doctor.name}">${doctor.name} </label></h5>
-      <p class="card-text" style=" color:#383C57 !important; font-weight: bold !important;" >Especialista en ${especialidadselecionada}</p></div></div> </div>             
+      <span class="card-text" style=" color:#383C57 !important; font-weight: bold !important;" >Especialista en ${especialidadselecionada}</span></div></div> </div>             
 </div>  `
 
       
@@ -75,7 +85,9 @@ No hay horas disponibles.
   }
 
   function loadHours(){
-    const selectedDate= fechaseleccionada;   
+    $("#cargando").css("display", "block");    
+    //const selectedDate= fechaseleccionada;  
+    const selectedDate= $date.val(); 
     const url =`/horario/horas?date=${selectedDate}&doctor_id=${doctorId}`;
     console.log(doctorId);   
     $.getJSON(url, displayHours);
@@ -116,6 +128,9 @@ No hay horas disponibles.
     $hoursMorning.html(htmHoursM);
     htmHoursA= `<h4 id="titleAfternoom" class="my-3 display-4">Tarde </h4>` + htmHoursA;
     $hoursAfternoom.html(htmHoursA);
+
+    $("#cargando").css("display", "none");   
+
     //$titleMorning.html(titlemorning);
     //$titleAfternoom.html(titleAfternoom);
   }

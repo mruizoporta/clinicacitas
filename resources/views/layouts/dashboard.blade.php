@@ -2,22 +2,6 @@
 
 @section('content')
 
-<div class="container">
-    <div class="row justify-content-center">
-    <div class="col-md-12 mb-4">
-        <div class="card">
-            <div class="card-header" style="color:#DA8C77;font-size: 1.3rem;">Dashboard</div>
-                <div class="card-body">
-                    @if (session('status'))
-                    <div class="alert alert-success" role="alert">
-                        {{ session('status') }}
-                    </div>
-                    @endif                  
-                </div>
-            </div>
-        </div>    
-    </div>
-</div>
 <div class="container-fluid py-3">
       <div class="row">
         <div class="col-xl-4 col-sm-6 mb-xl-0 mb-3">
@@ -26,11 +10,10 @@
               <div class="row">
                 <div class="col-8">
                   <div class="numbers">
-                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Citas pendientes</p>
+                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Citas pendientes de confirmar en el mes</p>
                     
                     <p class="mb-0">
-                      <span class="text-success text-sm font-weight-bolder" style="font-size: 32px !important;color: #DA8C77 !important;font-weight: bold !important; font-family: 'Open Sans', sans-serif !important;">
-                      {{ count($pendingAppointments)}}</span>
+                      <span class="text-success text-sm font-weight-bolder" style="font-size: 32px !important;color: #DA8C77 !important;font-weight: bold !important; font-family: 'Open Sans', sans-serif !important;">10</span>
                      
                     </p>
                   </div>
@@ -50,11 +33,10 @@
               <div class="row">
                 <div class="col-8">
                   <div class="numbers">
-                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Citas confirmadas</p>
+                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Citas confirmadas en el mes</p>
                    
                     <p class="mb-0">
-                      <span class="text-success text-sm font-weight-bolder" style="font-size: 32px !important;color: #DA8C77 !important;font-weight: bold !important; font-family: 'Open Sans', sans-serif !important;">
-                      {{ count($confirmedAppointments)}}</span>
+                      <span class="text-success text-sm font-weight-bolder" style="font-size: 32px !important;color: #DA8C77 !important;font-weight: bold !important; font-family: 'Open Sans', sans-serif !important;">30</span>
                      
                     </p>
                   </div>
@@ -74,11 +56,10 @@
               <div class="row">
                 <div class="col-8">
                   <div class="numbers">
-                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Total de citas</p>
+                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Total de citas en el mes</p>
                     
                     <p class="mb-0">
-                      <span class="text-danger text-sm font-weight-bolder" style="font-size: 32px !important;color: #DA8C77 !important;font-weight: bold !important; font-family: 'Open Sans', sans-serif !important;">
-                      {{ count($confirmedAppointments) + count($pendingAppointments)}}</span>
+                      <span class="text-danger text-sm font-weight-bolder" style="font-size: 32px !important;color: #DA8C77 !important;font-weight: bold !important; font-family: 'Open Sans', sans-serif !important;">20</span>
                       
                     </p>
                   </div>
@@ -94,6 +75,4 @@
         </div>
       
       </div>
-   
-     
-@endsection
+      @endsection

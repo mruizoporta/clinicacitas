@@ -118,9 +118,9 @@ use Illuminate\Support\Str;
           <!-- <form>          -->
             <div id="servicio" >             
               <div class="form-row">                    
-                <div class="form-group col-md-8">
-
-                  <h3 style=" color:#383C57 !important;" >Selecciona el servicio</h3>                                            
+                <div class="form-group col-md-8">              
+                  <h3 style=" color:#383C57 !important;" >Selecciona el servicio</h3>    
+                                                          
                   @foreach($specialties as $especialidad)
                   <div class="col-12">
                     <div class="card-deck mda-card">
@@ -164,21 +164,38 @@ use Illuminate\Support\Str;
               </div> 
             </div>
 
-            <div id="fecha">
-
-              <div id="calendario">
+            <div id="fecha"  style="display: none;">             
+                
+              <div id="calendario">              
                 <div class="form-row">
                   <div class="form-group col-md-10">
-                    <h3>Selecciona tu fecha y hora preferida</h3>                          
-                    <div id="calendar" class="mda-calendar"></div>
+                    <h3>Selecciona tu fecha y hora preferida</h3>  
+                    <div class="input-group">
+                      <div class="input-group-prepend">                      
+                      <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
+                      </div>
+                      <input  class="form-control datepicker"
+                                id="date" name="scheduled_date"
+                                placeholder="Seleccionar Fecha"                                
+                                value="{{old('scheduled_date'), date('Y-m-d')}}" 
+                                data-date-format="yyyy-mm-dd"
+                                data-date-start-date="{{date('Y-m-d')}}" 
+                               >    
+                    </div>                                
+                    <!-- <div id="calendar" class="mda-calendar"></div> -->
+                  </div>
+                  <div id="cargando" class="alert alert-success" style="display: none; role="alert">
+                    <strong>Cargando!</strong> Porfavor espere!
                   </div>
                 </div>
-              </div>
-
+                
+              </div> 
+              
               <div id="horas">
                 <div class="form-row">
                   <div class="form-group col-md-10">
                   <div id="intervalohoras">
+                   
                       <div >
                         <div id="hoursMorning" class="btn-group-toggle mda-horas" data-toggle="buttons">                            
                         </div>                                       
@@ -195,17 +212,10 @@ use Illuminate\Support\Str;
             </div>
 
             <div id="paciente" style="display: none;">
-              <form id="formpacientes" onsubmit="GuardarCita();"> 
+              <form id="formpacientes" onsubmit="GuardarCita();  return false"> 
                <div class="form-row mda-form">
                   <div class="col-md-10">
-                    <h3 >Estas casi listo, ingresa tus datos personales</h3>
-
-                    <div  style="display: none;" id="notificacion" class="card-body">             
-                      <div class="alert alert-success" role="alert">
-                        
-                      </div>           
-                  </div>
-
+                    <h3 >Estas casi listo, ingresa tus datos personales</h3>                  
                     <div class="custom-control custom-radio mt-3 mb-3" style="display: none;">
                         <input type="radio" id="type1" name="type" checked class="custom-control-input"
                         @if(old('type')=='Consulta') checked @endif 
@@ -234,20 +244,43 @@ use Illuminate\Support\Str;
 
                     <div class="form-group">
                       <textarea name="description" id="description" type="text" class="form-control"
-                  rows=5 placeholder="Notas de cita" required></textarea>
-                    </div>                 
+                    rows=5 placeholder="Notas de cita" required></textarea>
+                    </div> 
 
-                    <div id="notificacion" style="display: none;" class="alert alert-success" role="alert">    
-                    Gracias!. Su cita ha sido programada correctamente.           
+                    <div id="divregistrarse" class="form-group">
+                      <div class="custom-control custom-control-alternative custom-checkbox">
+                      <input name="registrarse" class="custom-control-input" id=" registrarse" type="checkbox" >
+                      <label class="custom-control-label" for=" registrarse">
+                        <span class="text-muted">Registrarme para dar seguimiento a mi cita.</span>
+                      </label>
+                      </div>
                     </div>
+                    <div id="contrasenas" style="display: none;">
+                      <div class="form-group">                         
+                          <input id="password" class="form-control" placeholder="Contraseña" type="password" name="password"  autocomplete="new-password" >                      
+                      </div>
 
-                    <button type="submit"  id="btnreservar" class="btn btn-sm btn-primary px-5 float-right"> Reservar cita</button>
+                      <div class="form-group">                      
+                          <input id="password_confirmation" class="form-control" placeholder="Repetir contraseña" type="password" name="password_confirmation"  autocomplete="new-password">                      
+                      </div>
 
+                      <div id="error" class="alert alert-warning" style="display: none;" role="alert">
+                          Las Contraseñas no coinciden, vuelve a intentar !
+                      </div>
+
+                      <div id="error2" class="alert alert-warning" style="display: none;" role="alert">
+                          Debe indicar una contraseñas valida !
+                      </div>
+
+                  </div>
+                    <button type="submit"  id="btnreservar" class="btn  btn-primary px-5 float-right"> Reservar cita</button>
+                   
                   </div>
                 </div>
                </form>  
             </div>
-
+        
+            </div>
           <!-- </form> -->
         </div>
       
@@ -286,9 +319,9 @@ use Illuminate\Support\Str;
             </div>
           </div>
 
+          
         </div>
 
-      </div>
     </div>
     
   </div>
@@ -301,15 +334,61 @@ use Illuminate\Support\Str;
 <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script> -->
 <!-- <script src="{{ asset('js/appointments/jquery-3.3.1.min.js')}}">   -->
 <script src="{{ asset('js/appointments/createweb.js')}}">  
-<script src="{{ asset('js/appointments/calendar.js')}}"> 
+// <script src="{{ asset('js/appointments/calendar.js')}}"> 
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js "></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js "></script> -->
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <script>
 
-$(document).ready(function () {
+$(document).ready(function () {    
+ 
+    $('#date').on('change', function(){      
+      $(".datepicker-dropdown  ").css("display", "none");    
+    });
+
+    $("#date").on('click', function(){
+    var Fcita=document.getElementById("date").value;    
+    if (!(Fcita==null || Fcita=='' ))
+      {
+        $(".datepicker-dropdown  ").css("display", "block"); 
+      }
+    });
+
+    $("#password").on('change', function(){
+      $("#error").css("display", "none");
+      $("#error2").css("display", "none");
+    });
+
+    $("#password_confirmation").on('change', function(){
+      $("#error").css("display", "none");
+      $("#error2").css("display", "none");
+    });
+
+    $("#email").on('change', function(){
+      var url_route_usuario = 'http://citas.test/api/usuarioexiste'; 
+      var formDataUsuario = {
+                email: $("#email").val()
+                }
+      $.ajax({
+                type: 'post',
+                dataType: "json",
+                url: url_route_usuario,
+                data: JSON.stringify(formDataUsuario),    
+                encode: true, 
+                contentType: "application/json; charset=utf-8"
+            }).done(function (data) {   
+              console.log(data);          
+              if (data.existe==1)
+                {   
+                  $("#divregistrarse").css("display", "none");
+                }else{
+                  $("#divregistrarse").css("display", "block");
+                }            
     
-   //   $("#fecha").css("display", "none");
+          });
+      });   
+
 
       $('input:radio').change(function () {
           const radioClicked = $(this).attr('id');
@@ -479,22 +558,67 @@ $(document).ready(function () {
     
       });
       
+      function validaVacio(valor) {
+        valor = valor.replace("&nbsp;", "");
+        valor = valor == undefined ? "" : valor;
+        if (!valor || 0 === valor.trim().length) {
+            return true;
+            }
+        else {
+            return false;
+            }
+        }
+
+
       function GuardarCita()
       {
         var url_route = 'http://citas.test/api/solicitar';    
-       
+
+        pass1 = document.getElementById('password');
+        pass2 = document.getElementById('password_confirmation');
+
+        if ( validaVacio(pass1.value) ) 
+        {
+          $("#error2").css("display", "block");
+          return false;
+        }
+
+        if (pass1.value != pass2.value) { 
+            // Si las constraseñas no coinciden mostramos un mensaje         
+            $("#error").css("display", "block");
+        return false;
+        }
+
+          if ($("#password").val()=="")
+            {              
+              var formData = {
+                name: $("#name").val() + ' ' + $("#lastname").val(),
+                email: $("#email").val(),
+                phone: $("#phone").val(),
+                scheduled_date:$date.val() ,
+                scheduled_time: intervaloseleccionado,
+                type: "Consulta",
+                description: $("#description").val(),                
+                password:"ND",
+                doctor_id: doctorId,
+                specialty_id: specialtyId 
+            }
+          }
+          else
+          {
             var formData = {
                 name: $("#name").val() + ' ' + $("#lastname").val(),
                 email: $("#email").val(),
                 phone: $("#phone").val(),
-                scheduled_date:fechaseleccionada,
+                scheduled_date:$date.val() ,
                 scheduled_time: intervaloseleccionado,
                 type: "Consulta",
                 description: $("#description").val(),
+                password: $("#password").val(),
                 doctor_id: doctorId,
-                specialty_id: specialtyId
+                specialty_id: specialtyId 
               };
-            console.log(formData);
+            }            
             $.ajax({
                 type: 'post',
                 dataType: "json",
@@ -502,22 +626,76 @@ $(document).ready(function () {
                 data: JSON.stringify(formData),    
                 encode: true, 
                 contentType: "application/json; charset=utf-8"
-            }).done(function (data) {
-              console.log(data);
+            }).done(function (data) {   
+              console.log(data);          
               if (data.status=1)
-              {                              
-                  swal("Muchas gracias!", data.msg ,"success", {
-                      button:"OK"
-                    });
-                   window.location.replace("https://www.valencia-medspa.com/");
+              {   
+                if ($("#password").val()=="")
+                {
+                  mostraralert2();                
+                }else {
+                  mostraralert1();
+                }                           
+               
               }else{
                 swal("Disculpe!", "En este momento no es posible registrar la cita. Intente mas tarde!" ,"error", {
                       button:"OK"
                     });
               }
             });
+          //   $("#error").css("display", "none");
              event.preventDefault();
            
+      }
+
+      function mostraralert1(){
+        Swal.fire({
+                  title: "Su cita ha sido registrada correctamente!" ,
+                  text: "Inicia sesión para darle seguimiento a tu cita o ve a Inicio.",
+                  imageUrl: "{{ asset('img/favicon-color.png')}}", 
+                  imageWidth: 150,
+                  imageHeight: 150,                
+                  showDenyButton: false,
+                  showCancelButton: true,  
+                  allowOutsideClick: false,
+                  color: '#383C57',               
+                  confirmButtonText: '<i class="ni ni-box-2"> </i> Inicio',
+                  cancelButtonText: '<i class="ni ni-single-02"></i> Iniciar sesión!', 
+                  customClass: {
+                                confirmButton: 'btn btn-successalert',
+                                cancelButton: 'btn btn-primaryalert'
+                              },
+                  buttonsStyling: false
+              }).then((result) => {
+                  console.log(result);
+                  if (result.isConfirmed) {
+                      window.location.href = "https://www.valencia-medspa.com/";
+                  } else if (result.isDismissed) {
+                    window.location.href = "https://citas.valencia-medspa.com/";
+                  }});
+      }
+
+      function mostraralert2(){
+        Swal.fire({
+                  title: "Su cita ha sido registrada correctamente!" ,
+                  text: "Te contactaremos para su confirmación.",
+                  imageUrl: "{{ asset('img/favicon-color.png')}}", 
+                  imageWidth: 150,
+                  imageHeight: 150,                
+                  showDenyButton: false,
+                  showCancelButton: false,  
+                  allowOutsideClick: false,
+                  color: '#383C57',               
+                  confirmButtonText: '<i class="ni ni-box-2"> </i> Ir a Inicio',                  
+                  customClass: {
+                                confirmButton: 'btn btn-successalert'
+                              },
+                  buttonsStyling: false
+              }).then((result) => {
+                  console.log(result);
+                  if (result.isConfirmed) {
+                      window.location.href = "https://www.valencia-medspa.com/";
+                  }});
       }
 
     function darclick(elem)

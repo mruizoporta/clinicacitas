@@ -1,11 +1,13 @@
 <?php
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use App\Models\User;
-use Iluminate\Support\Facades\Hash;
 use Carbon\Carbon;
 use App\Models\Appointment;
+use Illuminate\Support\Facades\Validator;
+
 
 class ApiController extends Controller
 {
@@ -15,7 +17,7 @@ class ApiController extends Controller
     }
 
     public function solicitarcita(Request $request){
-
+      
        // console.log('llama al api');
         $response =["status"=>0,"msg"=>"","id"=>""];
         $data= json_decode($request->getContent());
@@ -25,12 +27,28 @@ class ApiController extends Controller
 
         if(!$user){
         //Guardamos los usuarios
-        $user = User::create([  'name'  => $data->name,  
-                        'email' => $data->email,  
-                        'phone' => $data->phone, 
-                        'role'=>'paciente'
-                    ]
-         );
+            if($data->password=="ND")
+            {
+               
+                $user = User::create([  'name'  => $data->name,  
+                'email' => $data->email,  
+                'phone' => $data->phone, 
+                'role'=>'paciente'              
+            ]);
+           
+            }else
+            {
+               
+                $user = User::create([  'name'  => $data->name,  
+                'email' => $data->email,  
+                'phone' => $data->phone, 
+                'role'=>'paciente',
+                'password' => Hash::make($data->password),
+            ]);
+           
+            }
+       
+      
         }
          if ($user)
          {            
@@ -52,10 +70,30 @@ class ApiController extends Controller
 
                 $response['msg']="Cita registrada satisfactoriamente.";
                 $response['status']=1;
-                $response['id']=$user->id;
+                $response['id']=$user->id;                
          }
 
        //  var idpaciente= $user->id;
        return response()-> json($response);
     }
+
+    public function usuarioexiste(Request $request){
+
+        // console.log('llama al api');
+         $response =["existe"=>0];
+         $data= json_decode($request->getContent());
+        
+         //Buscamos si es un email existente
+         $user = User::where('email',  $data->email)->first(); 
+       
+          if ($user)
+          {         
+            $response['existe']=1;
+          }else{
+            $response['existe']=0;
+          }
+        
+        return response()-> json($response);
+     }
+
 }

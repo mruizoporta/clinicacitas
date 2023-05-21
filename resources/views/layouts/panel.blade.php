@@ -27,16 +27,16 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <!-- Brand -->
-      <img src="{{asset('img/brand/blue.png')}}" class="navbar-brand-img" alt="...">
-      <a class="navbar-brand pt-0" href="./index.html">
+      <img src="{{asset('img/brand/blue.png')}}" class="navbar-brand-img" alt="..." href="./home">
+      <a class="navbar-brand pt-0" href="./home">
        
       </a>
       <!-- User -->
       <ul class="nav align-items-center d-md-none">
         <li class="nav-item dropdown">
-          <a class="nav-link nav-link-icon" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <!-- <a class="nav-link nav-link-icon" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="ni ni-bell-55"></i>
-          </a>
+          </a> -->
           <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right" aria-labelledby="navbar-default_dropdown_1">
             <a class="dropdown-item" href="#">Action</a>
             <a class="dropdown-item" href="#">Another action</a>
@@ -47,10 +47,10 @@
         <li class="nav-item dropdown">
           <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <div class="media align-items-center">
-              <span class="avatar avatar-sm rounded-circle">
+              <!-- <span class="avatar avatar-sm rounded-circle">
                 <img alt="Image placeholder" src="{{asset('img/theme/team-1-800x800.jpg')}}
 ">
-              </span>
+              </span> -->
             </div>
           </a>
           @include('includes.panel.userOptions')
@@ -91,6 +91,8 @@
           <div class="form-group mb-0">
             <div class="input-group input-group-alternative">
               
+
+            
             </div>
           </div>
         </form>
@@ -119,7 +121,9 @@
     </div>
     <div class="container-fluid mt--7">
       @yield('content')
-
+     
+ 
+    </div>
      @include('includes.panel.footer')
     </div>
   </div>

@@ -58,11 +58,11 @@
 
 .activees {
   background-color: #fff;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.18), 0 3px 6px rgba(0, 0, 0, 0.23);
+  /* box-shadow: 0 3px 6px rgba(0, 0, 0, 0.18), 0 3px 6px rgba(0, 0, 0, 0.23); */
 }
 
 .cardes {
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15), 0 2px 5px rgba(0, 0, 0, 0.2);
+  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15), 0 2px 5px rgba(0, 0, 0, 0.2); */
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
@@ -82,11 +82,11 @@
 .activemedicos {
   border-color: #DA8C77 !important;
   background-color: #fff;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.18), 0 3px 6px rgba(0, 0, 0, 0.23);
+  /* box-shadow: 0 3px 6px rgba(0, 0, 0, 0.18), 0 3px 6px rgba(0, 0, 0, 0.23); */
 }
 
 .cardmedicos {
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15), 0 2px 5px rgba(0, 0, 0, 0.2);
+  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15), 0 2px 5px rgba(0, 0, 0, 0.2); */
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
@@ -211,11 +211,22 @@
 }
 
 .cardes {
-  border: 1px solid transparent;
+  /* border: 1px solid transparent; */
   border-radius: 3px;
+  border: 1px solid #B2B9CC;
 }
 
 .activees {
+ border: 1px solid #DA8C77;
+}
+
+.cardmedicos {
+  /* border: 1px solid transparent; */
+  border-radius: 3px;
+  border: 1px solid #B2B9CC;
+}
+
+.activemedicos {
  border: 1px solid #DA8C77;
 }
 
@@ -261,9 +272,9 @@ input[type="radio"]:checked::before {
 .mda-form .form-control:focus {
   color: #383C57;
   background-color: #fff;
-  border-color: #da8c77;
+  border-color: #da8c77 !important;
   outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(218, 140, 119,.25);
+  /* box-shadow: 0 0 0 0.2rem rgba(218, 140, 119,.25); */
 }
 
 .mda-form .input-group-text {
@@ -370,5 +381,6 @@ input[type="radio"]:checked::before {
   .mda-px-0 .mda-btn {
     margin-bottom: 1rem;
   }
+
 
 }

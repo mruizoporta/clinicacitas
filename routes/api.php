@@ -22,3 +22,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/users',[ApiController::class,'users']);
 Route::post('/solicitar',[ApiController::class,'solicitarcita']);
+Route::post('/usuarioexiste',[ApiController::class,'usuarioexiste']);
