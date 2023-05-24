@@ -37,7 +37,7 @@
     <div class="container-fluid">
      <div class="logo">
      <a class="navbar-brand pt-0" href="https://www.valencia-medspa.com/"><img src="{{asset('img/brand/header.png')}}" class="navbar-brand-imgweb" alt="..."> 
-   
+     </a>
     </div> 
     </div>     
     </div>

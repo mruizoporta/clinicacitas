@@ -2578,15 +2578,18 @@ fieldset:disabled a.btn {
   color: #fff;
   background-color: #DA8C77 ;
   border-color: #DA8C77;
-  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  /* box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08); */
   border-radius: 500px !important;
-
-  font-weight: 400 !important;
-  font-size: 14px !important;
+  font-weight: 200 !important;
+  font-size: 12px !important;
   text-align: center !important;
   width: 150px !important;
+  height: 35px !important; 
+  padding: 0.01rem 0.25rem !important;
+  font-family: 'Roboto', sans-serif !important;
    
 }
+
 
 
 .select-primary {
@@ -2692,13 +2695,16 @@ fieldset:disabled a.btn {
   color: #DA8C77;
   background-color: hwb(0 96% 3% / 0);
   border-color: #DA8C77;
-  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  /* box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08); */
 
   border-radius: 500px !important;
-  font-weight: 400 !important;
-  font-size: 14px !important;
+  font-weight: 200 !important;
+  font-size: 12px !important;
   text-align: center !important; 
   width: 150px !important;
+  height: 35px !important; 
+  padding: 0.01rem 0.25rem !important;
+  font-family: 'Roboto', sans-serif !important;
 }
 
 

@@ -120,7 +120,8 @@ use Illuminate\Support\Str;
               <div class="form-row">                    
                 <div class="form-group col-md-8">              
                   <h3 style=" color:#383C57 !important;" >Selecciona el servicio</h3>    
-                                                          
+                
+
                   @foreach($specialties as $especialidad)
                   <div class="col-12">
                     <div class="card-deck mda-card">
@@ -131,7 +132,7 @@ use Illuminate\Support\Str;
                             <p class="card-text">
                               <span id="precio-{{$especialidad->id}}"> Precio: ${{$especialidad->precio}} </span>
                               <span id="duracion-{{$especialidad->id}}">- {{$especialidad->duracion}} minutos</span>
-                              <a href="https://www.valencia-medspa.com/servicios/">Mas informacion</a>
+                              <a href="https://www.valencia-medspa.com/servicios/">Mas información</a>
                               <p>{{$especialidad->description}}</p>
                           </p>
                         
@@ -366,7 +367,7 @@ $(document).ready(function () {
     });
 
     $("#email").on('change', function(){
-      var url_route_usuario = 'http://citas.test/api/usuarioexiste'; 
+      var url_route_usuario = 'https://citas.valencia-medspa.com/api/usuarioexiste'; 
       var formDataUsuario = {
                 email: $("#email").val()
                 }
@@ -572,23 +573,12 @@ $(document).ready(function () {
 
       function GuardarCita()
       {
-        var url_route = 'http://citas.test/api/solicitar';    
+        var url_route = 'https://citas.valencia-medspa.com/api/solicitar';    
 
         pass1 = document.getElementById('password');
         pass2 = document.getElementById('password_confirmation');
 
-        if ( validaVacio(pass1.value) ) 
-        {
-          $("#error2").css("display", "block");
-          return false;
-        }
-
-        if (pass1.value != pass2.value) { 
-            // Si las constraseñas no coinciden mostramos un mensaje         
-            $("#error").css("display", "block");
-        return false;
-        }
-
+        
           if ($("#password").val()=="")
             {              
               var formData = {
@@ -606,6 +596,18 @@ $(document).ready(function () {
           }
           else
           {
+            if ( validaVacio(pass1.value) ) 
+            {
+              $("#error2").css("display", "block");
+              return false;
+            }
+
+            if (pass1.value != pass2.value) { 
+                // Si las constraseñas no coinciden mostramos un mensaje         
+                $("#error").css("display", "block");
+            return false;
+            }
+
             var formData = {
                 name: $("#name").val() + ' ' + $("#lastname").val(),
                 email: $("#email").val(),
@@ -650,17 +652,17 @@ $(document).ready(function () {
 
       function mostraralert1(){
         Swal.fire({
-                  title: "Su cita ha sido registrada correctamente!" ,
-                  text: "Inicia sesión para darle seguimiento a tu cita o ve a Inicio.",
-                  imageUrl: "{{ asset('img/favicon-color.png')}}", 
-                  imageWidth: 150,
-                  imageHeight: 150,                
+                  title: "Su cita ha sido registrada correctamente" ,
+                  text: "Inicia sesión para darle seguimiento a tu cita o ve a inicio para seguir navegando en la web",
+                  imageUrl: "{{ asset('img/blue2.png')}}", 
+                  imageWidth: 80,
+                  imageHeight: 80,                
                   showDenyButton: false,
                   showCancelButton: true,  
                   allowOutsideClick: false,
                   color: '#383C57',               
-                  confirmButtonText: '<i class="ni ni-box-2"> </i> Inicio',
-                  cancelButtonText: '<i class="ni ni-single-02"></i> Iniciar sesión!', 
+                  confirmButtonText: 'Inicio',
+                  cancelButtonText: 'Iniciar sesión', 
                   customClass: {
                                 confirmButton: 'btn btn-successalert',
                                 cancelButton: 'btn btn-primaryalert'
@@ -679,14 +681,14 @@ $(document).ready(function () {
         Swal.fire({
                   title: "Su cita ha sido registrada correctamente!" ,
                   text: "Te contactaremos para su confirmación.",
-                  imageUrl: "{{ asset('img/favicon-color.png')}}", 
-                  imageWidth: 150,
-                  imageHeight: 150,                
+                  imageUrl: "{{ asset('img/blue2.png')}}", 
+                  imageWidth: 80,
+                  imageHeight: 80,                
                   showDenyButton: false,
                   showCancelButton: false,  
                   allowOutsideClick: false,
                   color: '#383C57',               
-                  confirmButtonText: '<i class="ni ni-box-2"> </i> Ir a Inicio',                  
+                  confirmButtonText: ' Ir a Inicio',                  
                   customClass: {
                                 confirmButton: 'btn btn-successalert'
                               },
