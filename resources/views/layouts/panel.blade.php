@@ -27,10 +27,8 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <!-- Brand -->
-      <img src="{{asset('img/brand/blue.png')}}" class="navbar-brand-img" alt="..." href="./home">
-      <a class="navbar-brand pt-0" href="./home">
-       
-      </a>
+      <a class="navbar-brand pt-0" href="https://www.valencia-medspa.com/"><img src="{{asset('img/brand/blue.png')}}" class="navbar-brand-img" alt="..." >
+    
       <!-- User -->
       <ul class="nav align-items-center d-md-none">
         <li class="nav-item dropdown">

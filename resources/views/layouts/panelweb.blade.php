@@ -35,8 +35,9 @@
     <!-- Header -->
     <div class="header bg-gradient-primary pb-8 pt-4 pt-md-6">   
     <div class="container-fluid">
-      <div class="logo">
-    <img src="{{asset('img/brand/header.png')}}" class="navbar-brand-imgweb" alt="..."> 
+     <div class="logo">
+     <a class="navbar-brand pt-0" href="https://www.valencia-medspa.com/"><img src="{{asset('img/brand/header.png')}}" class="navbar-brand-imgweb" alt="..."> 
+   
     </div> 
     </div>     
     </div>

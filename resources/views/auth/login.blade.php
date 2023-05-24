@@ -57,7 +57,14 @@
           </div>
           <div class="row mt-3">
             
-          
+            <div class="col-xl-6">
+              <div class="copyright text-xl-left text-muted">
+                © 2023 <a href="https://www.valencia-medspa.com/" class="font-weight-bold text-muted ml-1" >{{config('app.name')}}</a>
+              </div>
+            </div>
+            <div class="col-xl-6 text-xl-right  text-muted">
+              <a href="{{ route('register') }}" class="text-light"><small>Registrate</small></a>
+            </div>          
           </div>
         </div>
       </div>
